@@ -56,7 +56,6 @@ final class PokemonJSONFragment: ModelJSONFragment<PokemonJSONFragment.Keys> {
 	}
 
 	override func compareCurrentFragment(to model: Any) {
-		// Do not fail if the provided model is not ChildModel, it might be useed from the MemberModel.
 		guard let model = model as? Pokemon else { return }
 		XCTAssertEqual(referenceValues[.baseType] as? String, model.baseType.rawValue)
 		XCTAssertEqual(referenceValues[.name] as? String, model.name)
